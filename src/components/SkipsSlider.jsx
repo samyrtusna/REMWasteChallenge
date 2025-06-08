@@ -33,10 +33,6 @@ function SkipsSlider() {
     }
   };
 
-  useEffect(() => {
-    console.log("Selected skip : ", selected);
-  }, [selected]);
-
   return (
     <>
       {loading && (
@@ -150,13 +146,11 @@ function SkipsSlider() {
               : "translate-y-full pointer-events-none"
           }`}
         >
-          {selected.id && (
-            <ConfirmationBar
-              size={selected.size}
-              price={selected.price_before_vat}
-              hireDays={selected.hire_period_days}
-            />
-          )}
+          <ConfirmationBar
+            size={selected.size}
+            price={selected.price_before_vat}
+            hireDays={selected.hire_period_days}
+          />
         </div>
       </div>
     </>
